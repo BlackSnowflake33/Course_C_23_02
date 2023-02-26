@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 0
+Console.Write("Введите значение:  ");
+string s = Console.ReadLine()!;
+int num = int.Parse(s);
+
+
+
+Console.WriteLine(num*num);
