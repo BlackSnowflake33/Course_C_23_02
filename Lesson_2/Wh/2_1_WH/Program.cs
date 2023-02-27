@@ -8,4 +8,4 @@ Console.WriteLine("Введите трехзначное число: ");
 int num = int.Parse(Console.ReadLine()!);
 
 int result = TakeNum(num);
-Console.WriteLine(result);
+Console.WriteLine($"Второй цифрой числа {num} являетсяя {result}");
