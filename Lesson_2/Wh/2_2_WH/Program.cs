@@ -4,7 +4,7 @@
 int FirstThird(int num)
 {
     Console.WriteLine(num);
-    return ((num/100 % 10) + num %10);
+    return ((num/100 % 10)*10 + num %10);
 }
 
 
