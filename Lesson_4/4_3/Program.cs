@@ -7,6 +7,7 @@ void Massive(int mas)
     {
         numbers[i] = new Random().Next(2); // только 0 и 1, 2 не включается
         Console.WriteLine(numbers[i]);
+        
     }
     
 }
