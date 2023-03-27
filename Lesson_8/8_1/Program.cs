@@ -1,9 +1,5 @@
-﻿//Задача 1: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
-//m = 3, n = 4. 
-//0 1 2 
-//3 1 2 
-//3 4 2 
-//3 4 5
+﻿// Задача 53: Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+
 
 int[,] InputDuoRandomMassive(int rows, int columns, int form, int to)
 {
@@ -31,7 +27,14 @@ string PrintDuoMassive(int[,] masDuo)
     return res;
 }
 
-
+void ReplaceIndex(int[,] arr)
+{
+    int arrRow = arr.GetLength(0);
+    int arrColumn = arr.GetLength(1);
+    for (int j = 0; j < arrColumn; j++)
+        (arr[0, j], arr[arrRow - 1, j]) = (arr[arrRow - 1, j], arr[0, j]);
+   
+}
 
 Console.WriteLine("Введите число строк в двухмерном массиве: ");
 int lineMass = int.Parse(Console.ReadLine()!);
@@ -45,3 +48,6 @@ int maxRangeMas = int.Parse(Console.ReadLine()!);
 int[,] masDuoRandom = InputDuoRandomMassive(lineMass, columnMass, minRangeMas, maxRangeMas);
 string printDMas = PrintDuoMassive(masDuoRandom);
 Console.WriteLine(printDMas);
+ReplaceIndex(masDuoRandom);
+string printDMas1 = PrintDuoMassive(masDuoRandom);
+Console.WriteLine(printDMas1);

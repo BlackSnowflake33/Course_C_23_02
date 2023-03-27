@@ -1,9 +1,7 @@
-﻿//Задача 1: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
-//m = 3, n = 4. 
-//0 1 2 
-//3 1 2 
-//3 4 2 
-//3 4 5
+﻿// Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. 
+//В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+
+
 
 int[,] InputDuoRandomMassive(int rows, int columns, int form, int to)
 {
@@ -31,7 +29,25 @@ string PrintDuoMassive(int[,] masDuo)
     return res;
 }
 
+bool Chek(int row, int column)
+{
+    bool result = row != column;
+    return result;
+}
 
+string RowToColumn(int[,] arr)
+{
+    if(Chek(arr.GetLength(0),arr.GetLength(1))) return "No";
+    {int arrRow = arr.GetLength(0);
+    int arrColumn = arr.GetLength(1);
+    for (int i = 1; i < arrRow; i++)
+        for (int j = 1; j < i; j++)
+        (arr[i, j], arr[j, i]) = (arr[j, i], arr[i, j]);
+    }
+    string printDMas = PrintDuoMassive(arr);
+    Console.WriteLine(printDMas);
+    return "Yes";
+}
 
 Console.WriteLine("Введите число строк в двухмерном массиве: ");
 int lineMass = int.Parse(Console.ReadLine()!);
@@ -45,3 +61,8 @@ int maxRangeMas = int.Parse(Console.ReadLine()!);
 int[,] masDuoRandom = InputDuoRandomMassive(lineMass, columnMass, minRangeMas, maxRangeMas);
 string printDMas = PrintDuoMassive(masDuoRandom);
 Console.WriteLine(printDMas);
+
+//Chek(lineMass,columnMass);
+string rowToColumn=RowToColumn(masDuoRandom);
+///string printDMas1 = PrintDuoMassive(masDuoRandom);
+Console.WriteLine(rowToColumn);
