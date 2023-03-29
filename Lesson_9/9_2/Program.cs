@@ -26,4 +26,4 @@ int numbersM = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите число N: ");
 int numbersN = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(SeriesNum(numbersM, numbersN));
+SeriesNum(numbersM, numbersN);
